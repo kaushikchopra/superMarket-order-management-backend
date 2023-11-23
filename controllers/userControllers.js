@@ -209,9 +209,9 @@ const login = async (req, res) => {
             }
 
             // Generate a login access token
-            // const expireInMinutes = Math.floor(Date.now() / 1000) + (15 * 60); //15 minutes
+            const expireInMinutes = Math.floor(Date.now() / 1000) + (15 * 60); //15 minutes
 
-            const accessToken = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "15s" })
+            const accessToken = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: expireInMinutes })
 
             const refreshToken = jwt.sign({ userId: user._id }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: "1d" })
 
@@ -398,7 +398,7 @@ const handleRefreshToken = async (req, res) => {
             const accessToken = jwt.sign(
                 { userId: decoded.userId },
                 process.env.ACCESS_TOKEN_SECRET,
-                { expiresIn: "15s" } // Expires in 15 seconds
+                { expiresIn: Math.floor(Date.now() / 1000) + (15 * 60) } // Expires in 15 minutes
             );
             res.json({ accessToken });
         }
