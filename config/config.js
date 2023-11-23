@@ -1,3 +1,3 @@
-const clientURL = "https://extraordinary-eclair-a6d3b3.netlify.app"
+const clientURL = "https://sm-order-manage.netlify.app"
 
 export { clientURL };
