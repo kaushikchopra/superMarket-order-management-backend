@@ -1,6 +1,6 @@
 const allowedOrigins = [
     "https://extraordinary-eclair-a6d3b3.netlify.app",
-    // "http://localhost:8070",
+    "https://sm-order-manage.onrender.com",
 ];
 
 export default allowedOrigins;
