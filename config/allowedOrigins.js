@@ -1,5 +1,5 @@
 const allowedOrigins = [
-    "https://extraordinary-eclair-a6d3b3.netlify.app",
+    "https://sm-order-manage.netlify.app",
     "https://sm-order-manage.onrender.com"
 ];
 
